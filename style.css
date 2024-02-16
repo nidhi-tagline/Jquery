@@ -1,0 +1,51 @@
+body {
+    background-color: silver;
+}
+
+.form_box {
+    padding: 30px 15px;
+}
+
+table,
+tr,
+th,
+.display_data td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+td,
+th {
+    padding: 10px;
+}
+
+#formdata {
+    margin: 30px 40px;
+}
+
+.btn {
+    padding: 5px;
+}
+
+.search_box {
+    margin: 50px 20px;
+}
+
+.search_box input {
+    padding: 10px;
+    font-size: 16px;
+}
+
+.errMessage {
+    color: red;
+    display: none;
+}
+input[name="searchbar"] {
+    width: 50%;
+
+}
+#sorting_order {
+    width: auto;
+    font-size: 16px;
+    padding: 10px;
+}

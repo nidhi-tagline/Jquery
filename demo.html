@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo using jQuery!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div style="display: flex;">
+        <div class="form_box">
+            <form id="form1">
+                <table id="form_table" style="width: fit-content; background-color: gainsboro;">
+                    <tr>
+                        <td><label for="name">Name</label></td>
+                        <td><input id="name" name="name" type="text" placeholder="Enter your Name"
+                                style="width: 100%;padding: 3px 0px;"><input id="pid" name="pid" type="hidden" value="">
+                        </td>
+                        <td class="errMessage" id="nameErr"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="email">Email</label></td>
+                        <td><input id="email" name="email" type="email" placeholder="Enter your email"
+                                style="width: 100%;padding: 3px 0px;"></td>
+                        <td class="errMessage" id="emailErr"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="gender">Gender</label></td>
+                        <td><input type="radio" id="male" name="Gender" value="Male">Male <input type="radio"
+                                name="Gender" id="female" value="Female">Female</td>
+                        <td class="errMessage" id="genderErr"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="hobbies">Hobbies</label></td>
+                        <td><input type="checkbox" name="hobby[]" id="Reading" value="Reading">Reading
+                            <input type="checkbox" name="hobby[]" id="Music" value="Music">Music
+                            <input type="checkbox" name="hobby[]" id="Travelling" value="Travelling">Travelling
+                        </td>
+                        <td class="errMessage" id="hobbyErr"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="DOB">DOB</label></td>
+                        <td><input id="dob" name="dob" type="date"></td>
+                        <td class="errMessage" id="dobErr"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="country">Country</label></td>
+                        <td><select id="country" name="country" style="width: 100%;padding: 3px 0px;"
+                                onchange="countryChange()">
+                                <option value="select">Select</option>
+                        </td>
+                        <td class="errMessage" id="countryErr"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="state">State</label></td>
+                        <td><select id="state" name="state" style="width: 100%;padding: 3px 0px;"
+                                onchange="stateChange()">
+                                <option value="select">Select</option>
+                        </td>
+                        <td class="errMessage" id="stateErr"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="city">City</label></td>
+                        <td><select id="city" name="city" style="width: 100%;padding: 3px 0px;">
+                                <option value="select">Select</option>
+                        </td>
+                        <td class="errMessage" id="cityErr"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center;">
+                            <input id="submitbtn" class="btn" type="button" value="Submit" onclick="addData()">
+                            <input id="updatebtn" class="btn" type="button" value="Update" style="display: none;">
+                            <input id="cancelbtn" class="btn" type="button" value="Cancel" onclick="cancelButton()"
+                                style="display: none;">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <div id="formdata">
+            <div style="margin: 25px;">
+                <div class="search_box">
+                    <input type="search" placeholder="Type to Search..." onkeyup="filterData()" name="searchbar" id="searchbar" />
+                    <select name="sorting" id="sorting_order" onchange="sortData()">
+                        <option value="default">select</option>
+                        <option value="ascend">ascending</option>
+                        <option value="descend">descending</option>
+                    </select>
+                </div> 
+                <h3 style="text-align: center;">Collected Data</h3>
+                <table class="display_data" id="data_table" style="background-color: whitesmoke;">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Gender</th>
+                            <th>Hobbies</th>
+                            <th>Age</th>
+                            <th>Country</th>
+                            <th>State</th>
+                            <th>City</th>
+                            <th>Created</th>
+                            <th>Updated</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table_body">
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="demo_jquery.js"></script>
+</body>
+
+</html>
